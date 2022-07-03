@@ -47,6 +47,10 @@ def rps():
         print("Computer chose", computerChoose)
 
         time.sleep(1)
+
+        #1 == rock, 2 == paper, 3 == scissors
+        #higher numbers are better as rock < paper < scissors
+        #however at the endpoints (1 and 3), direct comparisons are needed.
         if player == computer:
             print("Its a tie!")
         elif player == 1 and computer == 3:
@@ -58,7 +62,7 @@ def rps():
         elif player > computer:
             print("Player wins!")
             playerScore += 1
-        elif computer > player:
+        elif player < computer:
             print("Computer wins!")
             computerScore += 1
         rounds += 1
@@ -80,7 +84,7 @@ def rps():
 #Returns valid input as an integer 
 def getRpsInput():
     while True:
-        player = input("\nChoose 'r'ock, 'p'aper, or 's'cissors!").lower()
+        player = input("\nChoose 'r'ock, 'p'aper, or 's'cissors! ").lower()
         if (player == "r"):
             return 1, "rock"
         elif (player == "p"):
